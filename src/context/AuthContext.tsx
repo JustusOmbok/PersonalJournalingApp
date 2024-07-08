@@ -8,7 +8,7 @@ interface AuthContextData {
   logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextData>({
+export const AuthContext = createContext<AuthContextData>({
   token: null,
   login: () => {},
   logout: () => {},
@@ -43,5 +43,3 @@ export const AuthProvider: React.FC = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export default AuthContext;

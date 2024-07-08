@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
 import apiClient from '../api/client';
-import AuthContext from '../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import { useIsFocused } from '@react-navigation/native';
 
 const HomeScreen = ({ navigation }) => {

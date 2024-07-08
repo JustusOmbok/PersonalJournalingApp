@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import apiClient from '../api/client';
-import AuthContext from '../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 
 const ProfileScreen = () => {
   const { token, logout } = useContext(AuthContext);
@@ -38,7 +38,7 @@ const ProfileScreen = () => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setLoading(false);
-      alert('Profile updated successfully');
+      Alert.alert('Profile updated successfully');
     } catch (error) {
       setLoading(false);
       console.error('Failed to update profile', error);
